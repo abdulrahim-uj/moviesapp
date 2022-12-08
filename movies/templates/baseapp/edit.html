@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Update movie Details</h1>
+<form class="form-control" method="post" action="{{url}}"
+      enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div class="col-sm-1 mx-auto">
+        <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+</form>
+{% endblock %}

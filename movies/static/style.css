@@ -1,0 +1,12 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.top-space {
+    margin-top: 50px;
+}
+
+.bottom-space {
+    margin-bottom: 50px;
+}

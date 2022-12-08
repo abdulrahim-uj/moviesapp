@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{details.poster.url}}"
+           class="ml-5 img-fluid rounded-start rounded-end" alt="{{details.name}}"
+      style="height: 330px; margin-top: 15px; margin-bottom: 15px;"/>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body" style="color: #000">
+        <h5 class="card-title">{{details.name}}</h5>
+        <p class="card-text">{{details.description}}</p>
+        <p class="card-text"><small class="text-muted">{{details.year}}</small></p>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-6 mx-auto" style="margin-bottom: 25px; margin-top: 25px;">
+        <a class="btn btn-primary" href="{% url 'baseapp:updatedetails' details.pk %}">Update</a>
+        <a class="btn btn-warning" href="{% url 'baseapp:deletefilm' details.pk %}">Delete</a>
+    </div>
+</div>
+{% endblock %}

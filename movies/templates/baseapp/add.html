@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Add movies</h1>
+<form class="form-control" method="post" action="{% url 'baseapp:addmovies' %}"
+      enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-6">
+            <label for="name" class="form-label">Movie Name</label>
+            <input type="text" class="form-control" id="name"
+                   name="moviename" placeholder="name of the cinema" />
+        </div>
+        <div class="col-sm-6">
+            <label for="year" class="form-label">Release year</label>
+            <input type="date" class="form-control" id="year"
+                   name="releaseyear" placeholder="00/00/0000" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="picture" class="form-label">Movie Poster</label>
+        <input class="form-control" type="file" id="picture" name="posterimage" />
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Brief story</label>
+        <textarea class="form-control" id="description" name="moviestory" rows="3"></textarea>
+    </div>
+    <div class="col-sm-1 mx-auto">
+        <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+</form>
+{% endblock %}

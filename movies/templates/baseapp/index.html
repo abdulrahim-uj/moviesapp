@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for movie in movies_list %}
+        <div class="col-sm-4 bottom-space">
+            <div class="card" style="width: 18rem; height: 380px !important;">
+                <img src="{{movie.poster.url}}"
+                     style=" height: 200px !important;"
+                     class="img-fluid img-thumbnail" alt="{{movie.name}}" />
+                <div class="card-body" style="color: #000">
+                    <h5 class="card-title">{{movie.name}}</h5>
+                    <p class="card-text"
+                       style="overflow: hidden; height: 71px;">{{movie.description}}</p>
+                    <a href="{% url 'baseapp:moviedetail' pk=movie.pk %}"
+                       class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
